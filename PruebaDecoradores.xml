@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+		
+		
+		<record id="action_importe_form" model="ir.actions.act_window">
+            <field name="name">importe</field>
+            <field name="res_model">importes</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+        </record>
+		
+		
+        <record id="importe_tree_view" model="ir.ui.view">
+            <field name="name">importe.tree</field>
+            <field name="model">importes</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+            	<tree string="importes">
+              		<field name="importe1"/>
+					<field name="importe2"/>
+					<field name="importe3"/>
+              	</tree>
+            </field>
+        </record>
+		
+		
+		<record id="taller_propietarios_form_view" model="ir.ui.view">
+            <field name="name">importe.form</field>
+            <field name="model">importes</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+            	<form string="importes">
+					<group string="Informacion de los importes" rowspan="1" colspan="2">
+						<field name="importe1"/>
+						<field name="importe2"/>
+						<field name="importe3"/>
+					</group>
+				</form>
+            </field>
+        </record>
+
+		<menuitem id="importe_menu" name="importes" sequence="90"/>
+        <menuitem id="importes_menu" name="importes" parent="importe_menu"/>
+		<menuitem action="action_importe_form" id="importe_menu_action" sequence="1" parent="importes_menu"/>
+
+	</data>
+</openerp>
